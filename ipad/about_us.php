@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--lahiru-->
 <div data-role="page" data-ajax="true">
 
     <?php include 'panel.php'; ?>
