@@ -41,10 +41,9 @@
 
             }
 
-            #u_image {
-                width: 60%;
-                margin-top: 5%;
-                margin-left: 20%;
+            #my_img {
+               border-radius: 5%;
+
 
             }
 
@@ -153,10 +152,16 @@
                 font-size: 2em;
             }
 
-            input[type=radio] {
-                border: 0px;
-                width: 20px;
-                height: 1em;
+            li  {
+                background: #396E9B;
+                color: white;
+                text-shadow: none;
+                margin-top: 3%;
+                padding: 1%;
+                margin-bottom: 2%;
+                border: 2px;
+                border-radius: 5px;
+
             }
 
             p {
@@ -167,11 +172,12 @@
             .quizContainer {
                 background-color: transparent;
                 border-radius: 6px;
-                width: 75%;
+                width: 100%;
                 margin-top: 10px;
                 margin-left: 0;
                 padding-top: 5px;
                 position: relative;
+
             }
 
             .nextButton {
@@ -180,12 +186,12 @@
                 width: 30%;
                 height: 40px;
                 text-align: center;
-                background-color: #396E9B;
+                background-color: white;
                 /*clear: both;*/
-                color: white;
+                color: #396E9B;
                 font-family: 'Rokkitt', serif;
                 position: relative;
-                margin-left: 90%;
+                margin-left: 70%;
                 padding-top: 20px;
             }
 
@@ -214,7 +220,11 @@
             .choiceList {
                 font-family: Courier, serif;
                 color: #396E9B;
-                margin-left: 50%;
+                width: 50%;
+                text-align: left;
+                margin:0 auto;
+
+
             }
 
             .result {
@@ -226,6 +236,9 @@
                 text-align: center;
                 font-family: 'Rokkitt', serif;
             }
+
+
+
         </style>
 
         <script>
@@ -256,7 +269,6 @@
                             var json_responce = response.quizes;
 
                             var questions = new Array();
-                            ;
 
                             alert("Init " + questions.length);
 //                            var questions = [{
@@ -267,6 +279,8 @@
 
                             for (var i = 0; i < json_responce.length; i++) {
 
+
+
                                 var quiz = {
                                     question: json_responce[i].question,
                                     choices: [
@@ -275,7 +289,8 @@
                                         json_responce[i].c_ans,
                                         json_responce[i].w_ans_3
                                     ],
-                                    correctAnswer: 2
+                                    correctAnswer: 2,
+                                    image: json_responce[i].quiz_img
                                 }
                                 questions.push(quiz);
                             }
@@ -339,6 +354,7 @@
                                 var questionClass = $(document).find(".quizContainer > .question");
                                 var choiceList = $(document).find(".quizContainer > .choiceList");
                                 var numChoices = questions[currentQuestion].choices.length;
+                                $("#my_img").attr("src",questions[currentQuestion].image);
 
                                 // Set the questionClass text to the current question
                                 $(questionClass).text(question);
@@ -349,7 +365,7 @@
                                 var choice;
                                 for (i = 0; i < numChoices; i++) {
                                     choice = questions[currentQuestion].choices[i];
-                                    $('<li><input type="radio" value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
+                                    $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
                                 }
                             }
 
@@ -403,7 +419,7 @@
             </div>
             <div class="column">
 
-                <img src="../images/user.png" id="u_image">
+                <img src="../images/user.png" id="my_img" >
 
             </div>
 
@@ -418,7 +434,7 @@
         <div class="quizContainer">
 
             <div class="question"></div>
-            <ul class="choiceList"></ul>
+            <ul class="choiceList" ></ul>
             <div class="quizMessage"></div>
             <div class="result"></div>
             <div class="nextButton">Next Question</div>
