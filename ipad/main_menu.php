@@ -74,7 +74,7 @@
 
             .video-section .pattern-overlay {
                 background-color: rgba(71, 71, 71, 0.59);
-                border-radius: 5px;
+
                 min-height: 650px;
                 /* Incase of overlay problems just increase the min-height*/
             }
