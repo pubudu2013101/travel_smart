@@ -91,6 +91,7 @@
                 text-align: center;
                 margin-left: 17%;
                 margin-top: 5%;
+                
                 /*padding-right: 20%;
                 margin-top: 5%;*/
             }
