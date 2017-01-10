@@ -43,7 +43,7 @@
 
             #my_img {
                border-radius: 5%;
-
+                height: 200px;
 
             }
 
@@ -173,9 +173,9 @@
                 background-color: transparent;
                 border-radius: 6px;
                 width: 100%;
-                margin-top: 10px;
+                margin-top: 0px;
                 margin-left: 0;
-                padding-top: 5px;
+                padding-top: 0px;
                 position: relative;
 
             }
@@ -444,7 +444,7 @@
             </div>
 
             <div class="column">
-                <h1 id="noOfPoint">326</h1>
+                <h1 id="noOfPoint">013</h1>
                 <h4 id="lablePoint">Points</h4>
 
             </div>
