@@ -67,6 +67,10 @@
                             async: false,
                             success: function (response) {
                                 alert(response.message);
+
+                                if(response.message == 'registered'){
+                                    window.location.href = "http://localhost/travel_smart/ipad/loginpage.php";
+                                }
                             }
                         });
                     }
@@ -92,12 +96,14 @@
         h1 {
             color: #ffffff;
             font-weight: normal;
+            text-shadow: none;
 
         }
 
         h2 {
             color: #ffffff;
             font-weight: normal;
+            text-shadow: none;
         }
 
         [data-role="header"] {
@@ -117,7 +123,7 @@
             margin-right: 25%;
             margin-left: 10%;
             font-weight: normal;
-
+            text-shadow: none;
         }
 
         #topic {

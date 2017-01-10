@@ -61,6 +61,12 @@
                         async: false,
                         success: function (response) {
                             alert(response.message);
+
+                            if(response.message == 'login successful'){
+                                window.location.href = "http://localhost/travel_smart/ipad/main_menu.php";
+                            }
+
+
                         }
                     });
                 }
@@ -80,6 +86,10 @@
             background: #396E9B;
         }
 
+        a{
+            text-shadow: none;
+        }
+
         #login_btn {
             background: #ffffffff;
         }
@@ -87,6 +97,7 @@
         h1 {
             color: #ffffff;
             font-weight: normal;
+            text-shadow: none;
         }
 
         h2 {
@@ -139,6 +150,7 @@
             margin-right: 25%;
             margin-left: 10%;
             font-weight: normal;
+            text-shadow: none;
 
         }
 

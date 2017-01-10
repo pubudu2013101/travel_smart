@@ -436,7 +436,7 @@
 
                 <div class="ui-popup-screen ui-overlay-b ui-screen-hidden"></div>
                 <div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="pre-rendered-popup">
-                    <div class="ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="pre-rendered" data-role="popup" data-enhanced="true" data-overlay-theme="b" data-position-to="window">
+                    <div class="ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="pre-rendered" data-role="popup" data-enhanced="true" data-overlay-theme="b" data-position-to="window" data-transition="fade">
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     </div>
                 </div>
