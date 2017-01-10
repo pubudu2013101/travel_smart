@@ -78,24 +78,24 @@
                 color: #ff6666;
                 line-height: 1%;
                 text-align: right;
-                font-size: 50px;
-                margin-top: 10%;
+                font-size: 72px;
+                margin-top: 16%;
                 margin-right: 14%;
             }
 
             #lablePoint {
                 color: #333399;
-                margin-top: 21%;
                 text-align: right;
-                font-size: x-large;
+                font-size: xx-large;
                 margin-right: 15.5%;
             }
 
             #hint {
                 color: #333399;
                 text-align: left;
-                font-size: x-large;
-                margin-left: 12%;
+                font-size: xx-large;
+                margin-left: 7%;
+                margin-top: 11%;
                 line-height: 2%;
             }
 
@@ -185,22 +185,24 @@
                 border-radius: 6px;
                 width: 30%;
                 height: 40px;
+                font-weight: bolder;
                 text-align: center;
                 background-color: white;
                 /*clear: both;*/
                 color: #396E9B;
-                font-family: 'Rokkitt', serif;
                 position: relative;
                 margin-left: 70%;
                 padding-top: 20px;
             }
 
             .question {
-                font-family: 'Rokkitt', serif;
+                font-family: 'Georgia', serif;
                 font-size: 2em;
+                color: #396E9B;
                 width: 100%;
                 height: auto;
                 margin-top: 5%;
+                margin-bottom: 3%;
                 border-radius: 6px;
                 background-color: transparent;
                 text-align: center;
@@ -235,6 +237,13 @@
                 margin: auto;
                 text-align: center;
                 font-family: 'Rokkitt', serif;
+            }
+
+            #pre-rendered{
+                margin: 0 auto;
+                padding: 3%;
+                font-size: large;
+                width:50%;
             }
 
 
@@ -411,8 +420,10 @@
 
         <div class="container">
             <div class="column">
-                <a href="venta.html" data-theme="" id="ventaOption">
+                <a href="#pre-rendered" data-theme="" id="ventaOption" data-rel="popup">
                     <img src="../images/hint.png" width="80" height="80" id="hint_img">
+
+
                 </a>
                 <h4 id="hint">Hint</h4>
 
@@ -420,6 +431,15 @@
             <div class="column">
 
                 <img src="../images/user.png" id="my_img" >
+
+
+
+                <div class="ui-popup-screen ui-overlay-b ui-screen-hidden"></div>
+                <div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="pre-rendered-popup">
+                    <div class="ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="pre-rendered" data-role="popup" data-enhanced="true" data-overlay-theme="b" data-position-to="window">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </div>
 
             </div>
 
