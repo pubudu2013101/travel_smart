@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <script src="http://code.jquery.com/jquery-1.11.3.min.js" charset="utf-8"></script>
-        <script src="../../ipad_pubudu/js/rater.js" charset="utf-8"></script>
+        <script src="../../travel_smart/js/rater.js" charset="utf-8"></script>
 
         <style>
 
