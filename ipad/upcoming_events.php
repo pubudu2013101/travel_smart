@@ -61,7 +61,51 @@
                 background: #ffffff;
             }
 
+            #place_image{
+                margin: 10px;
+                margin-top: 15px;
+            }
+
         </style>
+
+        <script>
+
+            var my_email = location.search.split('user_email=')[1];
+
+            my_email = 'pubudujayasanka@gmail.com';
+
+            var arr = {user_email: my_email};
+
+
+            $(function () {
+
+                if (my_email == '') {
+                    alert("No place selected");
+                }
+                else {
+
+                    $.ajax({
+                        url: 'http://localhost/ux_ui_backend/index.php/event_controller/get_events',
+                        type: 'POST',
+                        data: JSON.stringify(arr),
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        async: false,
+                        success: function (data) {
+
+                            $.each(data, function(i, item) {
+
+                                $('ul').append('<li><a href=""><img src=" ' +  item.event_images  + '" id="place_image" width="200px">' + item.event_header + '<p><br>' + item.event_details + '<br>' + item.event_date + '</p></a></li>');
+                            });
+
+                            $('#output').listview("refresh");
+
+                        }
+                    });
+                }
+            });
+
+        </script>
 
     </head>
 
@@ -78,32 +122,7 @@
 
     <div data-role="main" class="ui-content">
 
-
-
-        <ul data-role="listview" data-inset="true">
-            <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
-            <li><a href="index.html">
-                    <h2>Stephen Weber</h2>
-                    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
-                    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
-                    <p class="ui-li-aside"><strong>6:24</strong>PM</p>
-                </a></li>
-            <li><a href="index.html">
-                    <h2>jQuery Team</h2>
-                    <p><strong>Boston Conference Planning</strong></p>
-                    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of
-                        sponsors
-                        and speakers.</p>
-                    <p class="ui-li-aside"><strong>9:18</strong>AM</p>
-                </a></li>
-            <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
-            <li><a href="index.html">
-                    <h2>Avery Walker</h2>
-                    <p><strong>Re: Dinner Tonight</strong></p>
-                    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
-                    <p class="ui-li-aside"><strong>4:48</strong>PM</p>
-                </a></li>
-        </ul>
+        <ul data-role="listview" data-filter="false" id="output" data-theme="a" data-inset="true"></ul>
 
     </div>
 

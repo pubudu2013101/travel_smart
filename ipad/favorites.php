@@ -62,12 +62,18 @@
                 background: #ffffff;
             }
 
+            #place_image{
+                margin-top: 15px;
+                margin-left: 10px;
+            }
 
         </style>
 
         <script>
 
             var my_email = location.search.split('user_email=')[1];
+
+                my_email = 'pubudujayasanka@gmail.com';
 
             var arr = {user_email: my_email};
 
@@ -89,11 +95,11 @@
                         async: false,
                         success: function (data) {
 
-                            $.each(data, function(i, item) {
-                       //         $('ul').append('<li><a href="">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
+                            $.each(data, function (i, item) {
+                                //         $('ul').append('<li><a href="">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
 
 
-                                $('ul').append('<li><a href="http://localhost/travel_smart/ipad/place_description.php?place_id=' + item.place_id + '&user_email=' + my_email + '" rel="external">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
+                                $('ul').append('<li><a href="http://localhost/travel_smart/ipad/place_description.php?place_id=' + item.place_id + '&user_email=' + my_email + '" rel="external"><img src=" ' +  item.place_img_url  + '" id="place_image" width="200px">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
                             });
 
                             $('#output').listview("refresh");
