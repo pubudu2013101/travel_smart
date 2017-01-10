@@ -2,7 +2,7 @@
 <html lang="en">
 
 <div data-role="page" data-ajax="true">
-
+<!--     init comment-->
     <?php include 'panel.php'; ?>
 
     <head>
