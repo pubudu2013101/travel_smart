@@ -44,7 +44,7 @@
 
                 width: 70%;
                 margin-left: 15%;
-                margin-top: 3%;
+                margin-top: 10%;
             }
 
             [data-role="header"] {
@@ -158,15 +158,15 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="../../travel_smart/images/image1.jpg" alt="Chania">
+                        <img src="../../travel_smart/images/image2.jpg" alt="Chania">
                     </div>
 
                     <div class="item">
-                        <img src="../../ipad_pubudu/images/image2.jpg" alt="Chania">
+                        <img src="../../travel_smart/images/image4.jpg" alt="Chania">
                     </div>
 
                     <div class="item">
-                        <img src="../../ipad_pubudu/images/image3.jpg" alt="Flower">
+                        <img src="../../travel_smart/images/image3.jpg" alt="Flower">
                     </div>
                 </div>
 
