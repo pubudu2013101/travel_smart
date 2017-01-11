@@ -114,7 +114,8 @@
         }
 
         #forgot_password_dialog {
-            padding: 10px;
+            padding: 1px;
+            align-content: center;
         }
 
         #forgot_pass, #reg {
@@ -160,6 +161,7 @@
         }
 
         #fpbtn {
+            size: 10px;
             background: #396E9B;
             color: #ffffff;
             font-style: normal;
@@ -205,9 +207,9 @@
 
             #res {
 
-               margin-left: 25px;
+               margin-left: 2px;
                 margin-top: -150px;
-                width: 300px;
+                width: 350px;
 
             }
 
@@ -228,7 +230,20 @@
 
                 font-size: 10px;
 
+
             }
+        }
+
+        @media screen  and (max-width: 450px){
+
+            #popupLogin{
+
+                position: relative;
+
+
+
+        }
+
         }
 
 
@@ -304,7 +319,7 @@
     </div>
 
 
-    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <div data-role="popup" id="popupLogin" data-theme="a" >
         <form id="forgot_password_dialog">
             <div style="width:400px">
                 <h3>Forgot Password</h3>
@@ -313,7 +328,7 @@
                 <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
 
                 <button type="submit" id="fpbtn"
-                        class="ui-btn ui-corner-all ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
+                        class="ui-btn  ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
                 </button>
             </div>
         </form>
