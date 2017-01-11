@@ -121,14 +121,12 @@
                 #form_update{
                     margin-left: 9%;
                 }
-<<<<<<< HEAD
+
                  #changePic{
-                     width: 53%;
+                     width: 53.5%;
                      margin-left: 18%;
                  }
-=======
 
->>>>>>> origin/master
             }
         </style>
 
