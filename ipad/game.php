@@ -225,8 +225,7 @@
                 width: 50%;
                 text-align: left;
                 margin:0 auto;
-
-
+                
             }
 
             .result {
@@ -288,14 +287,12 @@
 
                             for (var i = 0; i < json_responce.length; i++) {
 
-
-
                                 var quiz = {
                                     question: json_responce[i].question,
                                     choices: [
-                                        json_responce[i].w_ans_2,
-                                        json_responce[i].w_ans_3,
+                                        json_responce[i].w_ans_1,
                                         json_responce[i].c_ans,
+                                        json_responce[i].w_ans_2,
                                         json_responce[i].w_ans_3
                                     ],
                                     correctAnswer: 2,
@@ -453,7 +450,7 @@
 
         <div class="quizContainer">
 
-            <div class="question"></div>
+            <div class="question" id="questionlabel"></div>
             <ul class="choiceList" ></ul>
             <div class="quizMessage"></div>
             <div class="result"></div>
