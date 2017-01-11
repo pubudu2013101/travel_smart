@@ -179,25 +179,10 @@
 
     <div role="main" class="ui-content" data-theme="a">
 
-        <div class="ui-grid-a">
+        <div class="ui-grid-solo">
             <div class="ui-block-a">
                 <h1>Login or Create New Account </h1>
-                <br>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </br>  </br>
-                    It has survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the 1960s with the release of
-                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </br>  </br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
-                </p>
 
             </div>
             <div class="ui-block-b">
@@ -219,7 +204,8 @@
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
                             <a href="#popupLogin" data-role="link" id="forgot_pass" data-rel="popup"
-                               data-position-to="window" data-transition="pop">Forgot Password?</a></div>
+                               data-position-to="window" data-transition="pop">Forgot Password?</a>
+                        </div>
 
                         <div class="ui-block-b">
                             <a href="signup_page.php" data-role="link" id="reg" rel="external" data-transition="slide">Create
