@@ -93,14 +93,10 @@
                 padding: 0;
             }
 
-            @media screen and (max-width: 450px){
-
-                #footer{
-
+            @media screen and (max-width: 450px) {
+                #footer {
                     margin-left: 106px;
-
                 }
-
             }
 
         </style>
@@ -127,17 +123,17 @@
 
         <script>
 
-            (function() {
+            (function () {
 
-                window.onload = function() {
+                window.onload = function () {
 
                     var json = '';
                     var u_email = 'pubudujayasanka@gmail.com';
 
                     var arr = {user_email: u_email};
 
-                    if (u_email == '' ) {
-                        alert("Please fill");
+                    if (u_email == '') {
+                        //swal("Please fill");
                     }
                     else {
 
@@ -150,7 +146,8 @@
                             async: false,
                             success: function (response) {
 
-                                var json = response ;
+                                var json = response.unlock;
+                                var json_lock = response.lock;
 
 
                                 // Creating a new map
@@ -162,7 +159,7 @@
 
                                 // my location
                                 if (navigator.geolocation) {
-                                    navigator.geolocation.getCurrentPosition(function(position) {
+                                    navigator.geolocation.getCurrentPosition(function (position) {
                                         var pos = {
                                             lat: position.coords.latitude,
                                             lng: position.coords.longitude
@@ -172,13 +169,13 @@
                                         infoWindow.setContent('Location found.');
                                         map.setCenter(pos);
 
-                                   //     var image = 'images/male.png';
+                                        //     var image = 'images/male.png';
                                         var marker = new google.maps.Marker({
                                             position: pos,
                                             map: map,
                                             title: 'My Location',
                                             icon: '../images/male.png',
-                                            lable:'M'
+                                            lable: 'M'
                                         });
 
                                         var cityCircle = new google.maps.Circle({
@@ -194,14 +191,13 @@
 
                                         cityCircle.setMap(map);
 
-                                    }, function() {
+                                    }, function () {
                                         handleLocationError(true, infoWindow, map.getCenter());
                                     });
                                 } else {
                                     // Browser doesn't support Geolocation
                                     handleLocationError(false, infoWindow, map.getCenter());
                                 }
-
 
 
                                 var infoWindow = new google.maps.InfoWindow();
@@ -217,16 +213,49 @@
                                         position: latLng,
                                         map: map,
                                         title: data.place_name,
-                                        icon:'../images/unlock_place.png'
+                                        icon: '../images/palace_fav.png'
                                     });
 
                                     // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-                                    (function(marker, data) {
+                                    (function (marker, data) {
 
                                         // Attaching a click event to the current marker
-                                        google.maps.event.addListener(marker, "click", function(e) {
+                                        google.maps.event.addListener(marker, "click", function (e) {
                                             infoWindow.setContent(data.place_name);
                                             infoWindow.open(map, marker);
+                                            swal("Let's Start Game!", "Are you ready..?");
+
+//                                           var url = "game.php?place_id=" + encodeURIComponent(data.place_name) + ");
+                                            window.location.href = "http://localhost/travel_smart/iphone/place_description.php?place_id=" + data.place_id;
+
+                                        });
+
+
+                                    })(marker, data);
+
+                                }
+
+                                for (var i = 0, length = json_lock.length; i < length; i++) {
+
+                                    var data = json_lock[i],
+                                        latLng = new google.maps.LatLng(data.place_lat, data.place_lng);
+
+                                    // Creating a marker and putting it on the map
+                                    var marker = new google.maps.Marker({
+                                        position: latLng,
+                                        map: map,
+                                        title: data.place_name,
+                                        icon: '../images/palace_lock.png'
+                                    });
+
+                                    // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+                                    (function (marker, data) {
+
+                                        // Attaching a click event to the current marker
+                                        google.maps.event.addListener(marker, "click", function (e) {
+                                            infoWindow.setContent(data.place_name);
+                                            infoWindow.open(map, marker);
+                                            swal("Let's Start Game!", "Are you ready..?");
 
 //                                           var url = "game.php?place_id=" + encodeURIComponent(data.place_name) + ");
                                             window.location.href = "http://localhost/travel_smart/iphone/game.php?place_id=" + data.place_id;
