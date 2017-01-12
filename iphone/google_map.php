@@ -142,7 +142,7 @@
                     else {
 
                         $.ajax({
-                            url: 'http://localhost/ux_ui_backend/index.php/place_controller/get_unlock_places',
+                            url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/place_controller/get_unlock_places',
                             type: 'POST',
                             data: JSON.stringify(arr),
                             contentType: 'application/json; charset=utf-8',
