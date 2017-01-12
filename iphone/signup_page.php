@@ -3,7 +3,7 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Include jQuery Mobile stylesheets -->
+    <!-- Include jQuery Mobile stylesheetss -->
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- Include the jQuery library -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
