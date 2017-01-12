@@ -258,10 +258,10 @@
             alert(my_place);
 
             $(function () {
-                alert("Hi" + my_place);
+                //alert("Hi" + my_place);
 
                 if (my_place == '') {
-                    alert("No place selected");
+                    //alert("No place selected");
                 }
                 else {
 
@@ -278,7 +278,7 @@
 
                             var questions = new Array();
 
-                            alert("Init " + questions.length);
+                            //alert("Init " + questions.length);
 //                            var questions = [{
 //                                question: "What is the population of Brazil?",
 //                                choices: ["145 million", "199 million", "182 million", "205 million"],
@@ -289,13 +289,14 @@
 
                                 var quiz = {
                                     question: json_responce[i].question,
+                                    hint: json_responce[i].hint,
                                     choices: [
-                                        json_responce[i].w_ans_1,
-                                        json_responce[i].c_ans,
-                                        json_responce[i].w_ans_2,
-                                        json_responce[i].w_ans_3
+                                        json_responce[i].option_1,
+                                        json_responce[i].option_2,
+                                        json_responce[i].option_3,
+                                        json_responce[i].option_4
                                     ],
-                                    correctAnswer: 2,
+                                    correctAnswer: json_responce[i].corrent_ans,
                                     image: json_responce[i].quiz_img
                                 }
                                 questions.push(quiz);
@@ -303,6 +304,7 @@
 
                             var currentQuestion = 0;
                             var correctAnswers = 0;
+                            var points = 0;
                             var quizOver = false;
 
                             $(document).ready(function () {
@@ -325,10 +327,13 @@
                                             // TODO: Remove any message -> not sure if this is efficient to call this each time....
                                             $(document).find(".quizMessage").hide();
 
-                                            if (value == questions[currentQuestion].correctAnswer) {
-                                                correctAnswers++;
-                                            }
+                                            var check = --questions[currentQuestion].correctAnswer;
 
+                                            if (value == check) {
+                                                correctAnswers++;
+                                                points = points + 10;
+                                                alert("Your point is "+points);
+                                            }
                                             currentQuestion++; // Since we have already displayed the first question on DOM ready
                                             if (currentQuestion < questions.length) {
                                                 displayCurrentQuestion();
@@ -370,7 +375,7 @@
                                 $(choiceList).find("li").remove();
 
                                 var choice;
-                                for (i = 0; i < numChoices; i++) {
+                                for (i = 0; i < 4; i++) {
                                     choice = questions[currentQuestion].choices[i];
                                     $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
                                 }
@@ -420,8 +425,6 @@
             <div class="column">
                 <a href="#pre-rendered" data-theme="" id="ventaOption" data-rel="popup">
                     <img src="../images/hint.png" width="80" height="80" id="hint_img">
-
-
                 </a>
                 <h4 id="hint">Hint</h4>
 
@@ -435,7 +438,7 @@
                 <div class="ui-popup-screen ui-overlay-b ui-screen-hidden"></div>
                 <div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="pre-rendered-popup">
                     <div class="ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="pre-rendered" data-role="popup" data-enhanced="true" data-overlay-theme="b" data-position-to="window" data-transition="fade">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p id="hintpara">pmfpvmepvmervpemrvermbermb;erm;rmv;erlmv;elrmv;lemv</p>
                     </div>
                 </div>
 

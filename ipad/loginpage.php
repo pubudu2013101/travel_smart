@@ -245,7 +245,7 @@
                 <button type="submit" id="fpbtn"
                         class="ui-btn ui-corner-all ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
                 </button>
-            </div> 
+            </div>
         </form>
     </div>
 
