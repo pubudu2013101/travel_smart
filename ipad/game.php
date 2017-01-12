@@ -397,7 +397,7 @@
                                 // Remove all current <li> elements (if any)
                                 $(choiceList).find("li").remove();
 
-                                var choice;
+                                var choice; 
                                 for (i = 0; i < 4; i++) {
                                     choice = questions[currentQuestion].choices[i];
                                     $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
