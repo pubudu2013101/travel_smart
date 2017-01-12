@@ -247,9 +247,9 @@
                     <p id="contact"><b>Contact No : </b></p>
                 </div>
                 <br>
-                <button type="button" id="reserveTicket" class="ui-btn ui-corner-all ui-shadow ui-btn-e  ui-icon-check">
+                <a href="place_order.php"  id="reserveTicket" class="ui-btn ui-corner-all ui-shadow ui-btn-e  ui-icon-check" rel="external">
                     Reserve Ticket
-                </button>
+                </a>
 
 
             </div>
