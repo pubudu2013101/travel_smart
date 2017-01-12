@@ -63,7 +63,7 @@
                             alert(response.message);
 
                             if(response.message == 'login successful'){
-                                window.location.href = "http://localhost/travel_smart/ipad/main_menu.php";
+                                window.location.href = "http://localhost/travel_smart/iphone/main_menu.php";
                             }
 
 
@@ -181,6 +181,10 @@
             }
             #fpbtn{
                 width: 85%
+            }
+
+            #user_name{
+               width: 340px;
             }
 
         }
@@ -332,9 +336,11 @@
             <div id="alert"style="width:400px">
                 <h3 id="forgot_pass_txt">Forgot Password</h3>
                 <h4 id="type_email">Type your Email Address </h4>
-                <label for="un" class="ui-hidden-accessible" id="user_name">Username:</label>
-                <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+                <div id="user_c" style="width:400px">
+                <label id="user_name" for="user_name_a" class="ui-hidden-accessible" >Username:</label>
 
+                <input type="text" name="user" id="user_name_a" value="" placeholder="username" data-theme="a">
+                </div>
                 <button type="submit" id="fpbtn"
                         class="ui-btn  ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
                 </button>
