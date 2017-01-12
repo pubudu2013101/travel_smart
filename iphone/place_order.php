@@ -150,7 +150,6 @@
 
             #bloc1, #bloc2 {
                 display: inline;
-
             }
 
             #reserveTicket {
@@ -185,39 +184,48 @@
             }
 
             .rate2 .rate-select-layer {
-                color: red;
+                color: #396E9B;
             }
 
             #rate_container {
+                padding-top: 10%;
                 padding-left: 45%;
-
             }
 
-            @media screen and (max-width: 450px){
-
-                #bloc2{
-
-                    font-size: 13px;
-                }
-
-            }
-
-            @media screen and (max-width: 450px){
-
-                #bloc1{
-                    font-size: 10px;
-                }
-
+            #paypal {
+                padding-left: 44%;
             }
 
             @media screen and (max-width: 450px) {
-
-                #rate_container{
-
-                    padding-left: 90px;
-
+                #bloc2 {
+                    font-size: 13px;
                 }
 
+                #paypal{
+                   margin-left: -10%;
+                }
+                #input2{
+                    margin-left: 20%;
+                }
+                #rate_container{
+                    margin-left: -25%;
+                }
+
+                #rate_2{
+                    margin-left: 35%;
+                }
+            }
+
+            @media screen and (max-width: 450px) {
+                #bloc1 {
+                    font-size: 10px;
+                }
+            }
+
+            @media screen and (max-width: 450px) {
+                #rate_container {
+                    padding-left: 90px;
+                }
             }
 
         </style>
@@ -230,7 +238,7 @@
                     selected_symbol_type: 'hearts',
                     url: 'http://localhost/test.php',
                     initial_value: 3,
-                    update_input_field_name: $("#input2"),
+                    update_input_field_name: $("#input2")
                 }
 
                 $(".rate2").rate(options);
@@ -319,8 +327,6 @@
                 <h2>Payable Amount</h2>
             </div>
 
-            <br>
-
             <div id="bloc4">
                 <h1>Rs . 600.00</h1>
             </div>
@@ -341,13 +347,23 @@
 
         <div id="button_container">
 
-            <button type="button" id="reserveTicket" class="ui-btn ui-corner-all ui-shadow ui-btn-e  ui-icon-check">
+            <!--<button type="button" id="reserveTicket" class="ui-btn ui-corner-all ui-shadow ui-btn-e  ui-icon-check">
                 Pay with Paypal
-            </button>
+            </button> -->
+
+            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+                <input id="paypal" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+                       border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
         </div>
         <div id="rate_container">
-            <div class="rate2"></div>
-            <input id="input2" type="hidden">
+            <div class="rate2" id="rate_2"></div>
+            <input id="input2" type="text">
         </div>
     </div>
 
