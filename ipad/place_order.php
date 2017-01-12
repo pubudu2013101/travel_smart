@@ -331,7 +331,7 @@
         </div>
         <div id="rate_container">
             <div class="rate2"></div>
-            <input id="input2" type="text">
+            <input id="input2" type="hidden">
         </div>
     </div>
 
