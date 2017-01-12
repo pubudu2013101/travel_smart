@@ -69,7 +69,7 @@
 
                                 if(response.message == 'registered'){
                                     swal(response.message);
-                                    window.location.href = "http://localhost/travel_smart/ipad/loginpage.php";
+                                    window.location.href = "loginpage.php";
                                 }
                             }
                         });

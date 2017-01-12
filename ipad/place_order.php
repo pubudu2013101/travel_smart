@@ -115,7 +115,8 @@
 
             #point_container {
                 width: 100%;
-                height: 20%;
+                height: 20% !important;
+                background: black;
 
             }
 
@@ -123,6 +124,7 @@
                 width: 100%;
                 height: 22%;
                 border: 1px;
+
             }
 
             #first {
@@ -150,6 +152,7 @@
 
             #bloc1, #bloc2 {
                 display: inline;
+                background: white;
             }
 
             #reserveTicket {
@@ -164,6 +167,13 @@
 
             #bloc3 {
                 padding-top: 1%;
+                background: white;
+
+            }
+
+            #bloc3 {
+
+                background: white !important;
 
             }
 
@@ -177,6 +187,7 @@
 
             .rate2 {
                 font-size: 35px;
+                margin-left: -5% !important;
             }
 
             .rate2 .rate-hover-layer {
@@ -193,9 +204,22 @@
             }
 
             #paypal {
-                padding-left: 44%;
+                margin-left: 44%;
             }
 
+            .ui-block-b{
+
+                background: white;
+            }
+
+            .ui-block-a{
+
+                background: white;
+            }
+
+            .ui-panel-wrapper{
+                background: white !important;
+            }
         </style>
 
         <script>
@@ -204,7 +228,7 @@
                     max_value: 5,
                     step_size: 1,
                     selected_symbol_type: 'hearts',
-                    url: 'http://localhost/test.php',
+                    url: 'test.php',
                     initial_value: 3,
                     update_input_field_name: $("#input2")
             }
@@ -272,7 +296,8 @@
                 </div>
 
                 <div id="bloc2">
-                    <h1>Rs. 650.00</h1>
+                    <ul> <h1>Rs. 650.00</h1> </ul>
+
                 </div>
             </div>
 
@@ -290,7 +315,7 @@
 
 
         <div id="amout_container">
-            <ul></ul>
+
             <div id="bloc3">
                 <h2>Payable Amount</h2>
             </div>

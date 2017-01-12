@@ -14,6 +14,6 @@
     <a href="google_map.php" data-role="button" data-icon="gear" id="btn7" rel="external">Google Map</a>
     <a href="about_us.php" data-role="button" data-icon="info" id="btn8" rel="external">About Us</a>
     <hr>
-    <a href="loginpage.php" data-role="button" data-icon="power" id="btn9" rel="external">Logout</a>
+    <a href="splash.html" data-role="button" data-icon="power" id="btn9" rel="external">Logout</a>
 
 </div><!-- /panel -->

@@ -99,7 +99,7 @@
                                 //         $('ul').append('<li><a href="">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
 
 
-                                $('ul').append('<li><a href="http://localhost/travel_smart/ipad/place_description.php?place_id=' + item.place_id + '&user_email=' + my_email + '" rel="external"><img src=" ' +  item.place_img_url  + '" id="place_image" width="200px">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
+                                $('ul').append('<li><a href="place_description.php?place_id=' + item.place_id + '&user_email=' + my_email + '" rel="external"><img src=" ' +  item.place_img_url  + '" id="place_image" width="200px">' + item.place_name + '<p><br>' + item.place_address + '<br>' + item.place_open_at + '</p></a></li>');
                             });
 
                             $('#output').listview("refresh");

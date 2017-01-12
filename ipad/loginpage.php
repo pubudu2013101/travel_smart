@@ -84,7 +84,7 @@
                                         type: "success"
                                     },
                                     function(){
-                                        window.location.href = "http://localhost/travel_smart/ipad/main_menu.php";
+                                        window.location.href = "main_menu.php";
                                     });
                           //
                             }
