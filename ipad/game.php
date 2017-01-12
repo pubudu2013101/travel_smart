@@ -42,7 +42,7 @@
             }
 
             #my_img {
-               border-radius: 5%;
+                border-radius: 5%;
                 height: 200px;
 
             }
@@ -152,7 +152,7 @@
                 font-size: 2em;
             }
 
-            li  {
+            li {
                 background: #396E9B;
                 color: white;
                 text-shadow: none;
@@ -223,8 +223,8 @@
                 color: #396E9B;
                 width: 50%;
                 text-align: left;
-                margin:0 auto;
-                
+                margin: 0 auto;
+
             }
 
             .result {
@@ -237,13 +237,12 @@
                 font-family: 'Rokkitt', serif;
             }
 
-            #pre-rendered{
+            #pre-rendered {
                 margin: 0 auto;
                 padding: 3%;
                 font-size: large;
-                width:50%;
+                width: 50%;
             }
-
 
 
         </style>
@@ -320,129 +319,135 @@
                                     //alert(score);
                                     //$(document).find(".noOfPoint").text(score);
                                     $("#noOfPoint").text(score);
-                                }
-                            });
 
-                            var currentQuestion = 0;
-                            var correctAnswers = 0;
-                            myPoints = 0;
-                            var points = 0;
-                            var quizOver = false;
-                            var totalPoint = 0;
 
-                            $(document).ready(function () {
+                                    var currentQuestion = 0;
+                                    var correctAnswers = 0;
+                                    myPoints = 0;
+                                    var points = 0;
+                                    var quizOver = false;
+                                    var totalPoint = 0;
 
-                                // Display the first question
-                                displayCurrentQuestion();
-                                $(this).find(".quizMessage").hide();
+                                    $(document).ready(function () {
 
-                                // On clicking next, display the next question
-                                $(this).find(".nextButton").on("click", function () {
-                                    if (!quizOver) {
+                                        // Display the first question
+                                        displayCurrentQuestion();
+                                        $(this).find(".quizMessage").hide();
 
-                                        value = $("input[type='radio']:checked").val();
+                                        // On clicking next, display the next question
+                                        $(this).find(".nextButton").on("click", function () {
+                                            if (!quizOver) {
 
-                                        if (value == undefined) {
-                                            swal("Please Select an Answer!")
+                                                value = $("input[type='radio']:checked").val();
+
+                                                if (value == undefined) {
+                                                    swal("Please Select an Answer!")
 //                                            $(document).find(".quizMessage").text("Please select an answer");
 //                                            $(document).find(".quizMessage").show();
-                                            alert("undefined");
-                                        } else {
-                                            // TODO: Remove any message -> not sure if this is efficient to call this each time....
-                                            $(document).find(".quizMessage").hide();
 
-                                            var check = --questions[currentQuestion].correctAnswer;
-                                            if (value == check) {
-                                                correctAnswers++;
-                                                points = points + 10;
-                                                swal("Your point is "+ points);
-                                                totalPoint = points + score;
-                                                swal("total point is "+ totalPoint);
-                                                $("#noOfPoint").text(totalPoint);
-                                            }
-                                            currentQuestion++; // Since we have already displayed the first question on DOM ready
-                                            if (currentQuestion < 1) { //questions.length
-                                                displayCurrentQuestion();
-                                            } else {
-                                                alert("finish");
-                                                //displayScore();
-                                                //                    $(document).find(".nextButton").toggle();
-                                                //                    $(document).find(".playAgainButton").toggle();
-                                                // Change the text in the next button to ask if user wants to play again
-                                                $(document).find(".nextButton").text("Play Again?");
-                                                quizOver = true;
+                                                } else {
+                                                    // TODO: Remove any message -> not sure if this is efficient to call this each time....
+                                                    $(document).find(".quizMessage").hide();
 
-                                                var arr1 = {user_email: "pubudujayasanka@gmail.com", user_point :totalPoint };
-
-                                                $.ajax({
-                                                    url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_score_update',
-                                                    type: 'POST',
-                                                    data: JSON.stringify(arr1),
-                                                    contentType: 'application/json; charset=utf-8',
-                                                    dataType: 'json',
-                                                    async: false,
-                                                    success: function (response) {
-                                                        var res = response.message;
-                                                        alert(res);
+                                                    var check = --questions[currentQuestion].correctAnswer;
+                                                    if (value == check) {
+                                                        correctAnswers++;
+                                                        points = parseInt(points, 10) + 10;
+                                                        swal("Your point is " + points);
+                                                        totalPoint = parseInt(points, 10) + parseInt(score, 10);
+                                                        swal("total point is " + totalPoint);
+                                                        $("#noOfPoint").text(totalPoint);
+                                                    }else{
+                                                      //  swal("Wrong Answer..!");
+                                                        swal("Wrong Answer", "Try Next Question :)", "error");
                                                     }
-                                                });
+                                                    currentQuestion++; // Since we have already displayed the first question on DOM ready
+                                                    if (currentQuestion < questions.length) { //questions.length
+                                                        displayCurrentQuestion();
+                                                    } else {
+                                                        alert("finish");
+                                                        displayScore();
+                                                        //                    $(document).find(".nextButton").toggle();
+                                                        //                    $(document).find(".playAgainButton").toggle();
+                                                        // Change the text in the next button to ask if user wants to play again
+                                                        $(document).find(".nextButton").text("Play Again?");
+                                                        quizOver = true;
+
+                                                        var arr1 = {
+                                                            user_email: "pubudujayasanka@gmail.com",
+                                                            user_point: totalPoint
+                                                        };
+
+                                                        $.ajax({
+                                                            url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_score_update',
+                                                            type: 'POST',
+                                                            data: JSON.stringify(arr1),
+                                                            contentType: 'application/json; charset=utf-8',
+                                                            dataType: 'json',
+                                                            async: false,
+                                                            success: function (response) {
+                                                                var res = response.message;
+                                                                alert(res);
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                            } else { // quiz is over and clicked the next button (which now displays 'Play Again?'
+                                                quizOver = false;
+                                                $(document).find(".nextButton").text("Next Question");
+                                                resetQuiz();
+                                                displayCurrentQuestion();
+                                                hideScore();
                                             }
+                                        });
+
+                                    });
+
+                                    // This displays the current question AND the choices
+                                    function displayCurrentQuestion() {
+
+                                        console.log("In display current Question");
+
+                                        var question = questions[currentQuestion].question;
+                                        var hint = questions[currentQuestion].hint;
+                                        var questionClass = $(document).find(".quizContainer > .question");
+                                        var choiceList = $(document).find(".quizContainer > .choiceList");
+                                        var numChoices = questions[currentQuestion].choices.length;
+                                        $("#my_img").attr("src", questions[currentQuestion].image);
+                                        $("#hintpara").text(hint);
+
+                                        // Set the questionClass text to the current question
+                                        $(questionClass).text(question);
+
+                                        // Remove all current <li> elements (if any)
+                                        $(choiceList).find("li").remove();
+
+                                        var choice;
+                                        for (i = 0; i < 4; i++) {
+                                            choice = questions[currentQuestion].choices[i];
+                                            $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
                                         }
-                                    } else { // quiz is over and clicked the next button (which now displays 'Play Again?'
-                                        /*quizOver = false;
-                                        $(document).find(".nextButton").text("Next Question");
-                                        resetQuiz();
-                                        displayCurrentQuestion();
-                                        hideScore();*/
                                     }
-                                });
 
-                            });
+                                    function resetQuiz() {
+                                        currentQuestion = 0;
+                                        correctAnswers = 0;
+                                        hideScore();
+                                    }
 
-                            // This displays the current question AND the choices
-                            function displayCurrentQuestion() {
+                                    function displayScore() {
+                                        $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
+                                        $(document).find(".quizContainer > .result").show();
+                                        window.location.href = "http://localhost/travel_smart/ipad/place_description.php?place_id=" + my_place;
+                                    }
 
-                                console.log("In display current Question");
+                                    function hideScore() {
+                                        $(document).find(".result").hide();
+                                    }
 
-                                var question = questions[currentQuestion].question;
-                                var hint = questions[currentQuestion].hint;
-                                var questionClass = $(document).find(".quizContainer > .question");
-                                var choiceList = $(document).find(".quizContainer > .choiceList");
-                                var numChoices = questions[currentQuestion].choices.length;
-                                $("#my_img").attr("src",questions[currentQuestion].image);
-                                $("#hintpara").text(hint);
-
-                                // Set the questionClass text to the current question
-                                $(questionClass).text(question);
-
-                                // Remove all current <li> elements (if any)
-                                $(choiceList).find("li").remove();
-
-                                var choice;
-                                for (i = 0; i < 4; i++) {
-                                    choice = questions[currentQuestion].choices[i];
-                                    $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
                                 }
-                            }
-
-                            function resetQuiz() {
-                                currentQuestion = 0;
-                                correctAnswers = 0;
-                                hideScore();
-                            }
-
-                            function displayScore() {
-                                $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
-                                $(document).find(".quizContainer > .result").show();
-                                window.location.href = "http://localhost/travel_smart/ipad/place_description.php?place_id=" + my_place;
-                            }
-
-                            function hideScore() {
-                                $(document).find(".result").hide();
-                            }
-
-
-
+                            });
+//add
                         }
                     });
                 }
@@ -477,13 +482,14 @@
             </div>
             <div class="column">
 
-                <img src="../images/user.png" id="my_img" >
-
+                <img src="../images/user.png" id="my_img">
 
 
                 <div class="ui-popup-screen ui-overlay-b ui-screen-hidden"></div>
                 <div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="pre-rendered-popup">
-                    <div class="ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="pre-rendered" data-role="popup" data-enhanced="true" data-overlay-theme="b" data-position-to="window" data-transition="fade">
+                    <div class="ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="pre-rendered"
+                         data-role="popup" data-enhanced="true" data-overlay-theme="b" data-position-to="window"
+                         data-transition="fade">
                         <p id="hintpara">pmfpvmepvmervpemrvermbermb;erm;rmv;erlmv;elrmv;lemv</p>
                     </div>
                 </div>
@@ -501,7 +507,7 @@
         <div class="quizContainer">
 
             <div class="question" id="questionlabel"></div>
-            <ul class="choiceList" ></ul>
+            <ul class="choiceList"></ul>
             <div class="quizMessage"></div>
             <div class="result"></div>
             <div class="nextButton">Next Question</div>
