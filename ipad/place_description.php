@@ -138,7 +138,7 @@
                 else {
 
                     $.ajax({
-                        url: 'http://localhost/ux_ui_backend/index.php/place_controller/get_place_des',
+                        url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/place_controller/get_place_des',
                         type: 'POST',
                         data: JSON.stringify(arr),
                         contentType: 'application/json; charset=utf-8',
@@ -172,7 +172,7 @@
                     else {
 
                         $.ajax({
-                            url: 'http://localhost/ux_ui_backend/index.php/place_controller/add_to_favorite',
+                            url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/place_controller/add_to_favorite',
                             type: 'POST',
                             data: JSON.stringify(arr),
                             contentType: 'application/json; charset=utf-8',
@@ -180,7 +180,7 @@
                             async: false,
                             success: function (response) {
 
-                                emailjs.send("gmail","my_template",{u_name: "Lahiru",to_email:'madhusankhalahiru@gmail.com' , link:'http://localhost/ipad_pubudu/ipad/place_description.php?place_id=2&user_email=pubudu@gmail.com'});
+                                emailjs.send("gmail","my_template",{u_name: "Lahiru",to_email:'madhusankhalahiru@gmail.com' , link:'http://localhost/travel_smart/ipad/place_description.php?place_id=2&user_email=pubudu@gmail.com'});
                                 swal("Email has been sent ..!");
                             }
                         });

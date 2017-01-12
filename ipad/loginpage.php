@@ -53,7 +53,7 @@
                 else {
 
                     $.ajax({
-                        url: 'http://localhost/ux_ui_backend/index.php/user_account/user_login',
+                        url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_login',
                         type: 'POST',
                         data: JSON.stringify(arr),
                         contentType: 'application/json; charset=utf-8',
