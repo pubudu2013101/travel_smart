@@ -300,7 +300,7 @@
                 else {
 
                     $.ajax({
-                        url: 'http://localhost/ux_ui_backend/index.php/quiz_controller/get_quizes',
+                        url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/quiz_controller/get_quizes',
                         type: 'POST',
                         data: JSON.stringify(arr),
                         contentType: 'application/json; charset=utf-8',
