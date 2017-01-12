@@ -161,7 +161,6 @@
                 margin-bottom: 2%;
                 border: 2px;
                 border-radius: 5px;
-
             }
 
             p {
@@ -255,7 +254,7 @@
 
             var arr = {place_id: my_place};
 
-            alert(my_place);
+            //alert(my_place);
 
             $(function () {
                 //alert("Hi" + my_place);
@@ -266,7 +265,7 @@
                 else {
 
                     $.ajax({
-                        url: 'http://localhost/ux_ui_backend/index.php/quiz_controller/get_quizes',
+                        url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/quiz_controller/get_quizes',
                         type: 'POST',
                         data: JSON.stringify(arr),
                         contentType: 'application/json; charset=utf-8',
@@ -305,6 +304,7 @@
 
                             var arr = {user_email: "pubudujayasanka@gmail.com"};
 
+
                             $.ajax({
                                 url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_get_score',
                                 type: 'POST',
@@ -314,11 +314,11 @@
                                 async: false,
                                 success: function (response) {
                                     var result = response.score;
-                                    alert(result);
+                                    //alert(result);
                                     var score = result[0].user_point;
-                                    alert(score);
+                                    //alert(score);
                                     //$(document).find(".noOfPoint").text(score);
-                                    //$("#noOfPoint").text(score);
+                                    $("#noOfPoint").text(score);
                                 }
                             });
 
@@ -365,6 +365,25 @@
                                                 // Change the text in the next button to ask if user wants to play again
                                                 $(document).find(".nextButton").text("Play Again?");
                                                 quizOver = true;
+
+                                                var arr1 = {user_email: "pubudujayasanka@gmail.com", user_point :points };
+
+                                                $.ajax({
+                                                    url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_score_update',
+                                                    type: 'POST',
+                                                    data: JSON.stringify(arr1),
+                                                    contentType: 'application/json; charset=utf-8',
+                                                    dataType: 'json',
+                                                    async: false,
+                                                    success: function (response) {
+                                                        var res = response.score;
+                                                        alert(result);
+                                                        var score = result[0].user_point;
+                                                        alert(score);
+                                                        //$(document).find(".noOfPoint").text(score);
+                                                        //$("#noOfPoint").text(score);
+                                                    }
+                                                });
                                             }
                                         }
                                     } else { // quiz is over and clicked the next button (which now displays 'Play Again?'
@@ -397,7 +416,7 @@
                                 // Remove all current <li> elements (if any)
                                 $(choiceList).find("li").remove();
 
-                                var choice; 
+                                var choice;
                                 for (i = 0; i < 4; i++) {
                                     choice = questions[currentQuestion].choices[i];
                                     $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
