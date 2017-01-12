@@ -77,7 +77,7 @@
 
             var arr = {user_email: my_email};
 
-            alert("Email " + my_email);
+           // alert("Email " + my_email);
 
             $(function () {
 

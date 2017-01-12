@@ -124,6 +124,7 @@
             var my_place = location.search.split('place_id=')[1];
             var my_email = location.search.split('user_email=')[1];
 
+            var my_email = 'pubudujayasanka@gmail.com';
             var arr = {place_id: my_place};
 
             $(function () {
