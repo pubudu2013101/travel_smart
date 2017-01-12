@@ -127,7 +127,7 @@
                     var arr = {user_email: u_email};
 
                     if (u_email == '' ) {
-                        alert("Please fill");
+                        //swal("Please fill");
                     }
                     else {
 
@@ -217,6 +217,7 @@
                                         google.maps.event.addListener(marker, "click", function(e) {
                                             infoWindow.setContent(data.place_name);
                                             infoWindow.open(map, marker);
+                                            swal("Let's Start Game!", "Are you ready..?");
 
 //                                           var url = "game.php?place_id=" + encodeURIComponent(data.place_name) + ");
                                             window.location.href = "http://localhost/travel_smart/ipad/game.php?place_id=" + data.place_id;

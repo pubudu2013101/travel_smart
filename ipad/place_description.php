@@ -112,6 +112,8 @@
         </style>
 
         <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script src="../sweetalert-master/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../sweetalert-master/dist/sweetalert.css">
         <script type="text/javascript">
             (function(){
                 emailjs.init("user_Ybag3s3qo2aKC3Wv62Zvm");
@@ -123,14 +125,15 @@
             var my_email = location.search.split('user_email=')[1];
 
             var arr = {place_id: my_place};
-            alert("Place_id " + my_place);
-            alert("Email " + my_email);
+         //   alert("Place_id " + my_place);
+         //   alert("Email " + my_email);
 
             $(function () {
-                alert("Hi" + my_place);
+             //   alert("Hi" + my_place);
+
 
                 if (my_place == '') {
-                    alert("No place selected");
+                //    alert("No place selected");
                 }
                 else {
 
@@ -164,7 +167,7 @@
                     var arr = {place_id: my_place , user_email: my_email };
 
                     if (my_place == '') {
-                        alert("No place selected");
+                     //   alert("No place selected");
                     }
                     else {
 
@@ -178,7 +181,7 @@
                             success: function (response) {
 
                                 emailjs.send("gmail","my_template",{u_name: "Lahiru",to_email:'madhusankhalahiru@gmail.com' , link:'http://localhost/ipad_pubudu/ipad/place_description.php?place_id=2&user_email=pubudu@gmail.com'});
-
+                                swal("Email has been sent ..!");
                             }
                         });
                     }
