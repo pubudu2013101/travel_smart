@@ -206,8 +206,8 @@
                     selected_symbol_type: 'hearts',
                     url: 'http://localhost/test.php',
                     initial_value: 3,
-                    update_input_field_name: $("#input2"),
-                }
+                    update_input_field_name: $("#input2")
+            }
 
                 $(".rate2").rate(options);
 
@@ -331,7 +331,7 @@
         </div>
         <div id="rate_container">
             <div class="rate2"></div>
-            <input id="input2" type="hidden">
+            <input id="input2" type="text">
         </div>
     </div>
 
