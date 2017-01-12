@@ -132,7 +132,7 @@
                     else {
 
                         $.ajax({
-                            url: 'http://localhost/ux_ui_backend/index.php/place_controller/get_unlock_places',
+                            url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/place_controller/get_unlock_places',
                             type: 'POST',
                             data: JSON.stringify(arr),
                             contentType: 'application/json; charset=utf-8',
@@ -221,7 +221,7 @@
                                             swal("Let's Start Game!", "Are you ready..?");
 
 //                                           var url = "game.php?place_id=" + encodeURIComponent(data.place_name) + ");
-                                            window.location.href = "http://localhost/travel_smart/ipad/game.php?place_id=" + data.place_id;
+                                            window.location.href = "http://localhost/travel_smart/ipad/place_description.php?place_id=" + data.place_id;
 
                                         });
 
