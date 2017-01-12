@@ -10,7 +10,7 @@
     <a href="upcoming_events.php" data-role="button" data-icon="calendar" id="btn4" rel="external">Upcoming events</a>
     <hr>
     <a href="profile.php" data-role="button" data-icon="user" id="btn5" rel="external">Profile</a>
-    <a href="points.php" data-role="button" data-icon="star" id="btn6" rel="external">Point</a>
+<!--    <a href="points.php" data-role="button" data-icon="star" id="btn6" rel="external">Point</a>-->
     <a href="google_map.php" data-role="button" data-icon="gear" id="btn7" rel="external">Google Map</a>
     <a href="about_us.php" data-role="button" data-icon="info" id="btn8" rel="external">About Us</a>
     <hr>

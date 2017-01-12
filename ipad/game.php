@@ -355,7 +355,7 @@
                                                         points = parseInt(points, 10) + 10;
                                                         swal("Your point is " + points);
                                                         totalPoint = parseInt(points, 10) + parseInt(score, 10);
-                                                        swal("total point is " + totalPoint);
+                                                        swal("Correct .. ! ", "" , "success");
                                                         $("#noOfPoint").text(totalPoint);
                                                     }else{
                                                       //  swal("Wrong Answer..!");

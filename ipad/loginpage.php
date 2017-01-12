@@ -9,6 +9,12 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Include the jQuery Mobile library -->
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Include the jQuery library -->
+
+    <script src="../sweetalert-master/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../sweetalert-master/dist/sweetalert.css">
+
 
     <script>
 
@@ -48,7 +54,7 @@
                 var arr = {user_email: u_email, user_password: u_password};
 
                 if (u_email == '' || u_password == '') {
-                    alert("Please fill");
+                    swal("Please fill the Fields");
                 }
                 else {
 
@@ -60,10 +66,27 @@
                         dataType: 'json',
                         async: false,
                         success: function (response) {
-                            alert(response.message);
+
+                            swal({
+                                    title: "Login Successful",
+                                    text: "Please user IPad or IPhone .. !",
+                                    type: "success"
+                                },
+                                function(){
+                                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                });
 
                             if(response.message == 'login successful'){
-                                window.location.href = "http://localhost/travel_smart/ipad/main_menu.php";
+
+                                swal({
+                                        title: "Login Successful",
+                                        text: "Please user IPad or IPhone .. !",
+                                        type: "success"
+                                    },
+                                    function(){
+                                        window.location.href = "http://localhost/travel_smart/ipad/main_menu.php";
+                                    });
+                          //
                             }
 
 
