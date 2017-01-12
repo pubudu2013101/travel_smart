@@ -252,7 +252,7 @@
     </div>
 
     <div data-role="footer" data-position="fixed" data-tap-toggle="false" id="footer">
-
+<!--    login page-->
         <h1>DroinNTec Solutions</h1>
 
     </div>
