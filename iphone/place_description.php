@@ -214,8 +214,8 @@
                             async: false,
                             success: function (response) {
 
-                                emailjs.send("gmail","my_template",{u_name: "Lahiru",to_email:'madhusankhalahiru@gmail.com' , link:'http://localhost/travel_smart/ipad/place_description.php?place_id=2&user_email=pubudu@gmail.com'});
-                                swal("Email has been sent ..!");
+                                emailjs.send("gmail","my_template",{u_name: "Lahiru",to_email:'madhusankhalahiru@gmail.com' , link:'http://localhost/travel_smart/iphone/place_description.php?place_id=2&user_email=pubudu@gmail.com'});
+                                swal("Email has been sent!");
                             }
                         });
                     }
