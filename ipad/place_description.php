@@ -125,15 +125,11 @@
             var my_email = location.search.split('user_email=')[1];
 
             var arr = {place_id: my_place};
-         //   alert("Place_id " + my_place);
-         //   alert("Email " + my_email);
 
             $(function () {
-             //   alert("Hi" + my_place);
-
 
                 if (my_place == '') {
-                //    alert("No place selected");
+
                 }
                 else {
 
@@ -148,7 +144,6 @@
                             var json_responce = response.place;
                             var data = json_responce[0];
 
-                            alert(data.place_name);
                             $("#p_name").text(data.place_name);
                             $("#p_des").text(data.place_description);
                             $("#time").append("<b>" + data.place_open_at + "</b>");
@@ -167,7 +162,7 @@
                     var arr = {place_id: my_place , user_email: my_email };
 
                     if (my_place == '') {
-                     //   alert("No place selected");
+
                     }
                     else {
 

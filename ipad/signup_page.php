@@ -50,12 +50,12 @@
                 var arr = {user_email: u_email, user_password: u_password, user_name: u_name, user_mobile:c_mobile};
 
                 if (u_email == '' || u_password == '' || u_name == '' || c_password == '' || c_mobile == '') {
-                    alert("Please fill");
+                    swal("Please fill the Fields");
                 }
                 else {
                     if (u_password != c_password) {
 
-                        alert("Password Doesn't match");
+                        swal("Password Doesn't match");
                     } else {
                         alert("Done");
                         $.ajax({
@@ -66,9 +66,9 @@
                             dataType: 'json',
                             async: false,
                             success: function (response) {
-                                swal(response.message);
 
                                 if(response.message == 'registered'){
+                                    swal(response.message);
                                     window.location.href = "http://localhost/travel_smart/ipad/loginpage.php";
                                 }
                             }
