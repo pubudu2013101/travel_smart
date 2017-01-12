@@ -183,9 +183,7 @@
                 width: 85%
             }
 
-            #user_name{
-               width: 340px;
-            }
+
 
         }
 
@@ -248,13 +246,9 @@
 
         @media screen  and (max-width: 450px){
 
-            #popupLogin{
-
-                position: relative;
-
-
-
-        }
+            #ml{
+                width: 85%;
+            }
 
         }
 
@@ -336,14 +330,20 @@
             <div id="alert"style="width:400px">
                 <h3 id="forgot_pass_txt">Forgot Password</h3>
                 <h4 id="type_email">Type your Email Address </h4>
-                <div id="user_c" style="width:400px">
-                <label id="user_name" for="user_name_a" class="ui-hidden-accessible" >Username:</label>
 
-                <input type="text" name="user" id="user_name_a" value="" placeholder="username" data-theme="a">
-                </div>
-                <button type="submit" id="fpbtn"
-                        class="ui-btn  ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
-                </button>
+
+                    <div id="user_c" style="width:400px">
+                        <div id="ml">
+                        <label id="user_name" for="user_name_a" class="ui-hidden-accessible" >Username:</label>
+
+                        <input type="text" name="user" id="user_name_a" value="" placeholder="username" data-theme="a">
+                        </div>
+                    </div>
+                    <button type="submit" id="fpbtn"
+                            class="ui-btn  ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
+                    </button>
+
+
             </div>
         </form>
     </div>

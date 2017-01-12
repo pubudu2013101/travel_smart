@@ -419,7 +419,7 @@
                             function displayScore() {
                                 $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
                                 $(document).find(".quizContainer > .result").show();
-                                window.location.href = "http://localhost/travel_smart/ipad/place_description.php?place_id=" + my_place;
+                                window.location.href = "http://localhost/travel_smart/iphone/place_description.php?place_id=" + my_place;
                             }
 
                             function hideScore() {
