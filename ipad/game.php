@@ -296,10 +296,11 @@
                                         json_responce[i].option_3,
                                         json_responce[i].option_4
                                     ],
-                                    correctAnswer: json_responce[i].corrent_ans,
+                                    correctAnswer: json_responce[i].correct_ans,
                                     image: json_responce[i].quiz_img
                                 }
                                 questions.push(quiz);
+
                             }
 
                             var arr = {user_email: "pubudujayasanka@gmail.com"};
@@ -344,16 +345,17 @@
                                             swal("Please Select an Answer!")
 //                                            $(document).find(".quizMessage").text("Please select an answer");
 //                                            $(document).find(".quizMessage").show();
+                                            alert("undefined");
                                         } else {
                                             // TODO: Remove any message -> not sure if this is efficient to call this each time....
                                             $(document).find(".quizMessage").hide();
 
                                             var check = --questions[currentQuestion].correctAnswer;
-
+                                            alert("check "+value);
                                             if (value == check) {
                                                 correctAnswers++;
                                                 points = points + 10;
-                                                alert("Your point is "+points);
+                                                swal("Your point is "+ points);
                                             }
                                             currentQuestion++; // Since we have already displayed the first question on DOM ready
                                             if (currentQuestion < questions.length) {
@@ -376,12 +378,8 @@
                                                     dataType: 'json',
                                                     async: false,
                                                     success: function (response) {
-                                                        var res = response.score;
-                                                        alert(result);
-                                                        var score = result[0].user_point;
-                                                        alert(score);
-                                                        //$(document).find(".noOfPoint").text(score);
-                                                        //$("#noOfPoint").text(score);
+                                                        var res = response.message;
+                                                        alert(res);
                                                     }
                                                 });
                                             }
