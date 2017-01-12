@@ -184,19 +184,17 @@
                 <h1>Login or Create New Account </h1>
                 <br>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    TS is one of the biggest train operating companies that links London with the
+                    South-West and West of England. The network has trains that go to some of the most interesting,
+                    historic tourist points of interest in the country. They have hired you to develop an application that
+                    allows passengers to learn about these spots using the app through play. The end goal is to
+                    encourage them to visit these destinations in their leisure time and inspire passengers to share their
+                    experiences with other potential passengers.
                     </br>  </br>
-                    It has survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. It was popularised in the 1960s with the release of
-                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    TS has survived not only 1 centuries, but also they are leading company in the country. Travel smart is treasure hunt mobile
+                    application which manage and promote TS company's services and produts.
                     </br>  </br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-
+                    </br>  </br>
                 </p>
 
             </div>
@@ -252,7 +250,7 @@
     </div>
 
     <div data-role="footer" data-position="fixed" data-tap-toggle="false" id="footer">
-
+        <!--    login page-->
         <h1>DroinNTec Solutions</h1>
 
     </div>
