@@ -132,6 +132,28 @@
                 border-radius: 0%;
             }
 
+            @media screen and (max-width: 450px){
+
+                .carousel-inner{
+
+                    margin-top: 20px;
+                    height: 850px;
+
+                }
+
+                #myCarousel{
+
+                    margin-top: 30px;
+                    padding-top: 30%;
+                }
+
+                #rc{
+
+                    margin-bottom: 480px;
+                }
+
+            }
+
 
         </style>
 
@@ -171,11 +193,11 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <a class="left carousel-control" href="#myCarousel" role="button" id="rc" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <a class="right carousel-control" href="#myCarousel" id="rc" role="button" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
