@@ -66,7 +66,7 @@
                             dataType: 'json',
                             async: false,
                             success: function (response) {
-                                alert(response.message);
+                                swal(response.message);
 
                                 if(response.message == 'registered'){
                                     window.location.href = "http://localhost/travel_smart/ipad/loginpage.php";

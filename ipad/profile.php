@@ -138,7 +138,8 @@
                                 dataType: 'json',
                                 async: false,
                                 success: function (response) {
-                                    alert(response.message);
+                                    swal(response.message);
+                                   // alert(response.message);
                                 }
                             });
                         }
