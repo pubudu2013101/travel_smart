@@ -85,7 +85,7 @@
                 else {
 
                     $.ajax({
-                        url: 'http://travelsmartwebapp.azurewebsites.net/http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/event_controller/get_events',
+                        url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/event_controller/get_events',
                         type: 'POST',
                         data: JSON.stringify(arr),
                         contentType: 'application/json; charset=utf-8',

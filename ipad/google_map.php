@@ -132,7 +132,7 @@
                     else {
 
                         $.ajax({
-                            url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/place_controller/get_unlock_places',
+                            url: 'http://localhost/ux_ui_backend/index.php/place_controller/get_unlock_places',
                             type: 'POST',
                             data: JSON.stringify(arr),
                             contentType: 'application/json; charset=utf-8',
@@ -140,7 +140,8 @@
                             async: false,
                             success: function (response) {
 
-                                var json = response ;
+                                var json = response.unlock ;
+                                var json_lock = response.lock ;
 
 
                                 // Creating a new map
@@ -207,7 +208,39 @@
                                         position: latLng,
                                         map: map,
                                         title: data.place_name,
-                                        icon:'../images/unlock_place.png'
+                                        icon:'../images/palace_fav.png'
+                                    });
+
+                                    // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+                                    (function(marker, data) {
+
+                                        // Attaching a click event to the current marker
+                                        google.maps.event.addListener(marker, "click", function(e) {
+                                            infoWindow.setContent(data.place_name);
+                                            infoWindow.open(map, marker);
+                                            swal("Let's Start Game!", "Are you ready..?");
+
+//                                           var url = "game.php?place_id=" + encodeURIComponent(data.place_name) + ");
+                                            window.location.href = "http://localhost/travel_smart/ipad/game.php?place_id=" + data.place_id;
+
+                                        });
+
+
+                                    })(marker, data);
+
+                                }
+
+                                for (var i = 0, length = json_lock.length; i < length; i++) {
+
+                                    var data = json_lock[i],
+                                        latLng = new google.maps.LatLng(data.place_lat, data.place_lng);
+
+                                    // Creating a marker and putting it on the map
+                                    var marker = new google.maps.Marker({
+                                        position: latLng,
+                                        map: map,
+                                        title: data.place_name,
+                                        icon:'../images/palace_lock.png'
                                     });
 
                                     // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
