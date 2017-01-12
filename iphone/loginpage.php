@@ -173,6 +173,16 @@
                 display: none;
 
             }
+            #forgot_pass_txt{
+                margin-right: 15%;
+            }
+            #type_email{
+                margin-right: 15%;
+            }
+            #fpbtn{
+                width: 85%
+            }
+
         }
 
             @media screen and (max-width: 450px){
@@ -227,9 +237,7 @@
         @media screen and (max-width: 450px) {
 
             #forgot_pass,#reg {
-
                 font-size: 10px;
-
 
             }
         }
@@ -321,10 +329,10 @@
 
     <div data-role="popup" id="popupLogin" data-theme="a" >
         <form id="forgot_password_dialog">
-            <div style="width:400px">
-                <h3>Forgot Password</h3>
-                <h4>Type your Email Address </h4>
-                <label for="un" class="ui-hidden-accessible">Username:</label>
+            <div id="alert"style="width:400px">
+                <h3 id="forgot_pass_txt">Forgot Password</h3>
+                <h4 id="type_email">Type your Email Address </h4>
+                <label for="un" class="ui-hidden-accessible" id="user_name">Username:</label>
                 <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
 
                 <button type="submit" id="fpbtn"
