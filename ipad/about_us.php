@@ -149,7 +149,7 @@
                     experiences with other potential passengers.
                     </br>  </br>
                     TS has survived not only 1 centuries, but also they are leading company in the country. Travel smart is treasure hunt mobile
-                    application which manage TS company's
+                    application which manage and promote TS company's services and produts.
                     </br>  </br>
                     </br>  </br>
 

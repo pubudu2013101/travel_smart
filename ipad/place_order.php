@@ -188,6 +188,7 @@
             }
 
             #rate_container {
+                padding-top: 10%;
                 padding-left: 45%;
             }
 
