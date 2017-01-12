@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--lahiru-->
+
 <div data-role="page" data-ajax="true">
 
     <?php include 'panel.php'; ?>
@@ -96,6 +96,7 @@
 
             #contact {
                 text-align: center;
+                margin-left: 15%;
             }
 
             #address {
@@ -109,6 +110,7 @@
             }
 
             #share {
+                width: 180%;
                 margin-left: 6%;
                 color: #FFFFFF;
             }
@@ -133,7 +135,7 @@
             @media screen and (max-width: 450px) {
 
                 #con{
-
+                    margin-left: 5%;
                     clear: both;
 
                 }
