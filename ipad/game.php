@@ -328,6 +328,7 @@
                             myPoints = 0;
                             var points = 0;
                             var quizOver = false;
+                            var totalPoint = 0;
 
                             $(document).ready(function () {
 
@@ -351,24 +352,27 @@
                                             $(document).find(".quizMessage").hide();
 
                                             var check = --questions[currentQuestion].correctAnswer;
-                                            alert("check "+value);
                                             if (value == check) {
                                                 correctAnswers++;
                                                 points = points + 10;
                                                 swal("Your point is "+ points);
+                                                totalPoint = points + score;
+                                                swal("total point is "+ totalPoint);
+                                                $("#noOfPoint").text(totalPoint);
                                             }
                                             currentQuestion++; // Since we have already displayed the first question on DOM ready
-                                            if (currentQuestion < questions.length) {
+                                            if (currentQuestion < 1) { //questions.length
                                                 displayCurrentQuestion();
                                             } else {
-                                                displayScore();
+                                                alert("finish");
+                                                //displayScore();
                                                 //                    $(document).find(".nextButton").toggle();
                                                 //                    $(document).find(".playAgainButton").toggle();
                                                 // Change the text in the next button to ask if user wants to play again
                                                 $(document).find(".nextButton").text("Play Again?");
                                                 quizOver = true;
 
-                                                var arr1 = {user_email: "pubudujayasanka@gmail.com", user_point :points };
+                                                var arr1 = {user_email: "pubudujayasanka@gmail.com", user_point :totalPoint };
 
                                                 $.ajax({
                                                     url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_score_update',
@@ -385,11 +389,11 @@
                                             }
                                         }
                                     } else { // quiz is over and clicked the next button (which now displays 'Play Again?'
-                                        quizOver = false;
+                                        /*quizOver = false;
                                         $(document).find(".nextButton").text("Next Question");
                                         resetQuiz();
                                         displayCurrentQuestion();
-                                        hideScore();
+                                        hideScore();*/
                                     }
                                 });
 
