@@ -114,7 +114,8 @@
         }
 
         #forgot_password_dialog {
-            padding: 10px;
+            padding: 1px;
+            align-content: center;
         }
 
         #forgot_pass, #reg {
@@ -160,10 +161,92 @@
         }
 
         #fpbtn {
+            size: 10px;
             background: #396E9B;
             color: #ffffff;
             font-style: normal;
         }
+
+        @media screen and (max-width: 450px) {
+
+            #para {
+                display: none;
+
+            }
+        }
+
+            @media screen and (max-width: 450px){
+
+                h1{
+
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 450px){
+
+                #para {
+                    display: none;
+
+                }
+
+        }
+
+
+        @media screen and (max-width: 450px){
+
+            #u_name {
+
+                width: 300px;
+
+            }
+
+        }
+
+        @media screen and (max-width: 450px){
+
+            #res {
+
+               margin-left: 2px;
+                margin-top: -150px;
+                width: 350px;
+
+            }
+
+        }
+
+        @media screen and (max-width: 450px) {
+
+            #sign {
+
+                position: relative;
+
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+
+            #forgot_pass,#reg {
+
+                font-size: 10px;
+
+
+            }
+        }
+
+        @media screen  and (max-width: 450px){
+
+            #popupLogin{
+
+                position: relative;
+
+
+
+        }
+
+        }
+
+
     </style>
 
 </head>
@@ -179,13 +262,28 @@
 
     <div role="main" class="ui-content" data-theme="a">
 
-        <div class="ui-grid-solo">
+        <div class="ui-grid-a">
             <div class="ui-block-a">
                 <h1>Login or Create New Account </h1>
+                <br>
+                <p id="para">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </br>  </br>
+                    It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of
+                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </br>  </br>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
+                </p>
 
             </div>
-            <div class="ui-block-b">
+            <div class="ui-block-b" id="res">
 
                 <div class="ui_empty">
 
@@ -197,17 +295,16 @@
                     <input type="text" name="u_name" value="" id="u_name" placeholder="User Name"/>
                     <br>
                     <input type="password" name="password" value="" id="password" placeholder="Password"/>
-
+                    <br>
                     <a href="index.html" class="show-page-loading-msg" data-role="button" id="login_btn"
                        data-textonly="false" data-textvisible="true" data-msgtext="Loading">Login</a>
 
                     <div class="ui-grid-a">
                         <div class="ui-block-a">
                             <a href="#popupLogin" data-role="link" id="forgot_pass" data-rel="popup"
-                               data-position-to="window" data-transition="pop">Forgot Password?</a>
-                        </div>
+                               data-position-to="window" data-transition="pop">Forgot Password?</a></div>
 
-                        <div class="ui-block-b">
+                        <div class="ui-grid-a" >
                             <a href="signup_page.php" data-role="link" id="reg" rel="external" data-transition="slide">Create
                                 an account</a>
                         </div>
@@ -222,7 +319,7 @@
     </div>
 
 
-    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <div data-role="popup" id="popupLogin" data-theme="a" >
         <form id="forgot_password_dialog">
             <div style="width:400px">
                 <h3>Forgot Password</h3>
@@ -231,7 +328,7 @@
                 <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
 
                 <button type="submit" id="fpbtn"
-                        class="ui-btn ui-corner-all ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
+                        class="ui-btn  ui-shadow ui-btn-e ui-btn-icon-left ui-icon-check">Sign in
                 </button>
             </div>
         </form>

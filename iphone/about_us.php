@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--lahiru-->
 <div data-role="page" data-ajax="true">
 
     <?php include 'panel.php'; ?>
@@ -117,6 +117,37 @@
                 border-radius: 0%;
             }
 
+            @media screen and (max-width: 450px){
+
+                #bl{
+
+                    border-right: 0px;
+
+                  clear: both;
+                    text-align: justify;
+                    width: 100%;
+
+                }
+            }
+
+            @media screen and (max-width: 450px) {
+
+                #con{
+
+                    clear: both;
+
+                }
+
+            }
+
+            @media screen and (max-width: 450px) {
+
+                #he{
+
+                    text-align: center;
+                }
+
+            }
 
         </style>
 
@@ -135,10 +166,10 @@
 
     <div data-role="main" class="ui-content">
 
-        <div class="ui-grid-a">
+        <div class="ui-grid-a" >
 
-            <div class="ui-block-a">
-                <h2>What is Travel Smart ?</h2>
+            <div class="ui-block-a" id="bl">
+                <h2 id="he">What is Travel Smart ?</h2>
 
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -161,7 +192,7 @@
                 </p>
 
             </div>
-            <div class="ui-block-b">
+            <div class="ui-block-b" id="con">
                 <h2 id="contact">Contact Us</h2>
 
                 <h3>Address :</h3>
@@ -169,6 +200,7 @@
 
                 <h3>Contact Number</h3>
                 <p>0114354653 / 0774523432</p>
+
 
                 <h3>Email Address</h3>
                 <p>travelsmart@gmail.com</p>

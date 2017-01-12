@@ -123,6 +123,28 @@
 
             }
 
+            @media screen and (max-width: 450px){
+
+                #trv{
+
+                    font-size: 40px;
+
+                    margin-bottom: 70px;
+                    padding-top: 60px;
+                }
+
+
+
+                #changePic{
+
+                    font-size: 20px;
+                    width: 150px;
+                    margin-left: 93px;
+                    margin-top: 100px;
+                }
+
+            }
+
         </style>
 
     </head>
@@ -146,7 +168,7 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>Travel Smart</h1>
+                            <h1 id="trv">Travel Smart</h1>
                             <h3>Play & Enjoy Your Journey With Us  </h3>
                             <a href="google_map.php" data-role="button" id="changePic" data-theme="e" rel="external">PLAY NOW</a>
                         </div>
