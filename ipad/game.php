@@ -290,6 +290,7 @@
                                 var quiz = {
                                     question: json_responce[i].question,
                                     hint: json_responce[i].hint,
+
                                     choices: [
                                         json_responce[i].option_1,
                                         json_responce[i].option_2,
@@ -302,8 +303,28 @@
                                 questions.push(quiz);
                             }
 
+                            var arr = {user_email: "pubudujayasanka@gmail.com"};
+
+                            $.ajax({
+                                url: 'http://travelsmartwebapp.azurewebsites.net/ux_ui_backend/index.php/user_account/user_get_score',
+                                type: 'POST',
+                                data: JSON.stringify(arr),
+                                contentType: 'application/json; charset=utf-8',
+                                dataType: 'json',
+                                async: false,
+                                success: function (response) {
+                                    var result = response.score;
+                                    alert(result);
+                                    var score = result[0].user_point;
+                                    alert(score);
+                                    //$(document).find(".noOfPoint").text(score);
+                                    //$("#noOfPoint").text(score);
+                                }
+                            });
+
                             var currentQuestion = 0;
                             var correctAnswers = 0;
+                            myPoints = 0;
                             var points = 0;
                             var quizOver = false;
 
@@ -363,10 +384,12 @@
                                 console.log("In display current Question");
 
                                 var question = questions[currentQuestion].question;
+                                var hint = questions[currentQuestion].hint;
                                 var questionClass = $(document).find(".quizContainer > .question");
                                 var choiceList = $(document).find(".quizContainer > .choiceList");
                                 var numChoices = questions[currentQuestion].choices.length;
                                 $("#my_img").attr("src",questions[currentQuestion].image);
+                                $("#hintpara").text(hint);
 
                                 // Set the questionClass text to the current question
                                 $(questionClass).text(question);
@@ -374,7 +397,7 @@
                                 // Remove all current <li> elements (if any)
                                 $(choiceList).find("li").remove();
 
-                                var choice;
+                                var choice; 
                                 for (i = 0; i < 4; i++) {
                                     choice = questions[currentQuestion].choices[i];
                                     $('<li><input type="radio"  value=' + i + ' name="dynradio" />' + choice + '</li>').appendTo(choiceList);
@@ -396,6 +419,8 @@
                             function hideScore() {
                                 $(document).find(".result").hide();
                             }
+
+
 
                         }
                     });
