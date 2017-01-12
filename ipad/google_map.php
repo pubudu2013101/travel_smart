@@ -221,7 +221,7 @@
                                             swal("Let's Start Game!", "Are you ready..?");
 
 //                                           var url = "game.php?place_id=" + encodeURIComponent(data.place_name) + ");
-                                            window.location.href = "http://localhost/travel_smart/ipad/game.php?place_id=" + data.place_id;
+                                            window.location.href = "http://localhost/travel_smart/ipad/place_description.php?place_id=" + data.place_id;
 
                                         });
 
