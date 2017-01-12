@@ -184,12 +184,15 @@
             }
 
             .rate2 .rate-select-layer {
-                color: red;
+                color: #396E9B;
             }
 
             #rate_container {
                 padding-left: 45%;
+            }
 
+            #paypal {
+                padding-left: 44%;
             }
 
         </style>
@@ -311,9 +314,12 @@
 
         <div id="button_container">
 
-            <button type="button" id="reserveTicket" class="ui-btn ui-corner-all ui-shadow ui-btn-e  ui-icon-check">
+            <!--<button type="button" id="reserveTicket" class="ui-btn ui-corner-all ui-shadow ui-btn-e  ui-icon-check">
                 Pay with Paypal
-            </button>
+            </button> -->
+
+            
+
         </div>
         <div id="rate_container">
             <div class="rate2"></div>
