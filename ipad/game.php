@@ -365,7 +365,7 @@
                                                     if (currentQuestion < questions.length) { //questions.length
                                                         displayCurrentQuestion();
                                                     } else {
-                                                        alert("finish");
+                                                      //  alert("finish");
                                                         displayScore();
                                                         //                    $(document).find(".nextButton").toggle();
                                                         //                    $(document).find(".playAgainButton").toggle();
@@ -387,7 +387,7 @@
                                                             async: false,
                                                             success: function (response) {
                                                                 var res = response.message;
-                                                                alert(res);
+                                                               // alert(res);
                                                             }
                                                         });
                                                     }
@@ -438,7 +438,7 @@
                                     function displayScore() {
                                         $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
                                         $(document).find(".quizContainer > .result").show();
-                                        window.location.href = "place_description.php?place_id=" + my_place;
+                                        window.location.href = "index.html";
                                     }
 
                                     function hideScore() {
